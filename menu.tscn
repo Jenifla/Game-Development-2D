@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://duy2comq30mj5"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_e424x"]
+[ext_resource type="Texture2D" uid="uid://kr8h6ch5r2i5" path="res://aset/graveyard.png" id="2_mxdoq"]
+[ext_resource type="AudioStream" uid="uid://usbhgtq4ws5u" path="res://aset/neon-gaming-128925.mp3" id="3_sarcq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5epdk"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5afa4"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rd7be"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xnnqc"]
+content_margin_top = 5.0
+content_margin_bottom = 15.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_e424x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(580.125, 323.25)
+scale = Vector2(0.596434, 0.59213)
+texture = ExtResource("2_mxdoq")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -545.0
+offset_top = -414.0
+offset_right = 574.0
+offset_bottom = -276.0
+theme_override_colors/font_color = Color(0.627451, 0.627451, 0.988235, 1)
+theme_override_colors/font_shadow_color = Color(0.988235, 0.772549, 0.905882, 1)
+theme_override_constants/shadow_offset_x = -5
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/font_size = 90
+text = "Welcome to Wolf Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Sprite2D"]
+offset_left = -438.0
+offset_top = -266.0
+offset_right = 431.0
+offset_bottom = -110.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprite2D/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Sprite2D/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Sprite2D/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.843137, 0.470588, 0.666667, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5epdk")
+text = "New Game"
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Sprite2D/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Sprite2D/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.843137, 0.470588, 0.666667, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5afa4")
+text = "Load Game"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Sprite2D/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Sprite2D/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.843137, 0.470588, 0.666667, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rd7be")
+text = "Option"
+
+[node name="MarginContainer4" type="MarginContainer" parent="Sprite2D/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Sprite2D/MarginContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.843137, 0.470588, 0.666667, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xnnqc")
+text = "Setting"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_sarcq")
+autoplay = true
+
+[connection signal="button_up" from="Sprite2D/MarginContainer/VBoxContainer/MarginContainer/Button" to="." method="_on_button_button_up"]
