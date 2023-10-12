@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b3j6gx7l8e22d"]
+[gd_scene load_steps=24 format=3 uid="uid://b3j6gx7l8e22d"]
 
 [ext_resource type="Script" path="res://Sprite2D.gd" id="4_duiu6"]
 [ext_resource type="Texture2D" uid="uid://ck7jxitfw7737" path="res://aset/Wolf/Wolf/Run right/__Wolf_Run_000.png" id="5_0e6ou"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cnswij106lsgl" path="res://aset/Wolf/Wolf/Run left/__Wolf_Run_007.png" id="20_0kb3r"]
 [ext_resource type="AudioStream" uid="uid://ddubval5fr8gj" path="res://aset/cruising-down-8bit-lane-159615.mp3" id="20_6gu05"]
 [ext_resource type="PackedScene" uid="uid://bytqev520a1xx" path="res://background.tscn" id="21_k4as0"]
+[ext_resource type="PackedScene" uid="uid://da73ci2n8d5h3" path="res://musuh.tscn" id="21_xsr7r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xtd3g"]
 animations = [{
@@ -118,3 +119,6 @@ position = Vector2(162, -290)
 stream = ExtResource("20_6gu05")
 volume_db = 10.0
 autoplay = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("21_xsr7r")]
+position = Vector2(721, 183)
